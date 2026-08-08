@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { usePackPal } from '../context/PackPalContext';
+import { usePackPal } from '../../context/PackPalContext';
 import Navbar from '../components/layout/Navbar';
 import ProgressBar from '../components/common/ProgressBar';
 import Button from '../components/common/Button';
