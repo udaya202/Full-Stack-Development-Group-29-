@@ -1,0 +1,276 @@
+import waveHand from '../assets/Screenshot_2026-08-06_051414-removebg-preview.png';
+import clipboardImg from '../assets/Screenshot_2026-08-06_052814-removebg-preview.png';
+import checkmarkImg from '../assets/Screenshot_2026-08-06_053521-removebg-preview.png';
+import targetImg from '../assets/Screenshot_2026-08-06_053943-removebg-preview.png';
+import collaboratorsImg from '../assets/Screenshot_2026-08-06_054251-removebg-preview.png';
+import planeImg from '../assets/Screenshot_2026-08-06_055406-removebg-preview.png';
+import cartImg from '../assets/Screenshot_2026-08-06_060808-removebg-preview.png';
+import tentImg from '../assets/Screenshot_2026-08-06_061014-removebg-preview.png';
+import heroImg from '../assets/hero.png';
+
+export { waveHand, clipboardImg, checkmarkImg, targetImg, collaboratorsImg, planeImg, cartImg, tentImg, heroImg };
+
+export const initialStats = {
+    totalLists: 4,
+    totalItems: 12,
+    completed: 4,
+    collaborators: 4,
+};
+
+export const initialLists = [
+    {
+        id: 1,
+        name: 'beach',
+        image: null,
+        icon: 'fa-umbrella-beach',
+        topColor: 'bg-amber-400',
+        progressBarColor: 'bg-amber-400',
+        updated: 'recently',
+        owner: 'Senithu',
+        members: [
+            { id: 1, name: 'Senithu', initials: 'S', bg: 'bg-blue-500 text-white' },
+            { id: 5, name: 'Abishek', initials: 'A', bg: 'bg-slate-400 text-white' },
+        ],
+    },
+    {
+        id: 2,
+        name: 'Japan Trip Packing',
+        image: planeImg,
+        icon: 'fa-plane',
+        topColor: 'bg-blue-500',
+        progressBarColor: 'bg-blue-500',
+        updated: '2 hours ago',
+        owner: 'Senithu',
+        members: [
+            { id: 1, name: 'Senithu', initials: 'S', bg: 'bg-blue-500 text-white' },
+            { id: 2, name: 'Dahamsa', initials: 'D', bg: 'bg-teal-500 text-white' },
+            { id: 3, name: 'Isala', initials: 'I', bg: 'bg-purple-500 text-white' },
+        ],
+    },
+    {
+        id: 3,
+        name: 'Weekly Groceries',
+        image: cartImg,
+        icon: 'fa-shopping-bag',
+        topColor: 'bg-emerald-400',
+        progressBarColor: 'bg-emerald-400',
+        updated: '1 day ago',
+        owner: 'Senithu',
+        members: [
+            { id: 1, name: 'Senithu', initials: 'S', bg: 'bg-blue-500 text-white' },
+            { id: 4, name: 'Udaya', initials: 'U', bg: 'bg-amber-500 text-white' },
+        ],
+    },
+    {
+        id: 4,
+        name: 'Camping Checklist',
+        image: tentImg,
+        icon: 'fa-campground',
+        topColor: 'bg-amber-400',
+        progressBarColor: 'bg-amber-400',
+        updated: '3 days ago',
+        owner: 'Senithu',
+        members: [
+            { id: 1, name: 'Senithu', initials: 'S', bg: 'bg-blue-500 text-white' },
+            { id: 2, name: 'Dahamsa', initials: 'D', bg: 'bg-teal-500 text-white' },
+            { id: 3, name: 'Isala', initials: 'I', bg: 'bg-purple-500 text-white' },
+            { id: 5, name: 'Abishek', initials: 'A', bg: 'bg-slate-400 text-white' },
+        ],
+    },
+];
+
+// Tasks mapped cleanly across lists
+export const initialTasks = [
+    {
+        id: 101,
+        listId: 2,
+        title: 'Passport & JR Pass',
+        purpose: 'Japan Trip Packing',
+        description: 'Verify expiration dates and print out physical JR pass exchange vouchers.',
+        status: 'packed',
+        completed: true,
+        category: 'Documents',
+        priority: 'High',
+        assignee: 'Senithu',
+        quantity: 1,
+        dueDate: '2026-08-15',
+        addedBy: 'Senithu',
+        addedAt: '2 days ago'
+    },
+    {
+        id: 102,
+        listId: 2,
+        title: 'Universal Travel Adapter',
+        purpose: 'Japan Trip Packing',
+        description: 'Multi-region plug adapter with USB-C PD fast charging ports.',
+        status: 'packed',
+        completed: true,
+        category: 'Electronics',
+        priority: 'High',
+        assignee: 'Dahamsa',
+        quantity: 2,
+        dueDate: '2026-08-12',
+        addedBy: 'Dahamsa',
+        addedAt: '1 day ago'
+    },
+    {
+        id: 103,
+        listId: 4,
+        title: '4-Person Waterproof Tent',
+        purpose: 'Camping Checklist',
+        description: 'Inspect aluminum tent poles, stakes, and waterproof rainfly cover.',
+        status: 'in-progress',
+        completed: false,
+        category: 'Sports',
+        priority: 'High',
+        assignee: 'Isala',
+        quantity: 1,
+        dueDate: '2026-08-18',
+        addedBy: 'Isala',
+        addedAt: '3 hours ago'
+    },
+    {
+        id: 104,
+        listId: 2,
+        title: 'Power Bank 20,000mAh',
+        purpose: 'Japan Trip Packing',
+        description: 'Ensure battery pack is fully charged before long flight.',
+        status: 'in-progress',
+        completed: false,
+        category: 'Electronics',
+        priority: 'Medium',
+        assignee: 'Senithu',
+        quantity: 1,
+        dueDate: '2026-08-14',
+        addedBy: 'Senithu',
+        addedAt: '5 hours ago'
+    },
+    {
+        id: 105,
+        listId: 2,
+        title: 'Yen Cash & Suica Card',
+        purpose: 'Japan Trip Packing',
+        description: 'Withdraw JPY bills and top up digital Suica card for subway trains.',
+        status: 'to-pack',
+        completed: false,
+        category: 'Documents',
+        priority: 'High',
+        assignee: 'Senithu',
+        quantity: 1,
+        dueDate: '2026-08-18',
+        addedBy: 'Senithu',
+        addedAt: '1 hour ago'
+    },
+    {
+        id: 106,
+        listId: 3,
+        title: 'Fresh Avocados & Whole Milk',
+        purpose: 'Weekly Groceries',
+        description: 'Buy organic whole milk, fresh avocados, and sourdough bread for breakfast.',
+        status: 'to-pack',
+        completed: false,
+        category: 'Food',
+        priority: 'Medium',
+        assignee: 'Udaya',
+        quantity: 3,
+        dueDate: '2026-08-10',
+        addedBy: 'Udaya',
+        addedAt: '30 mins ago'
+    },
+    {
+        id: 107,
+        listId: 1,
+        title: 'Beach Towels & Sunscreen SPF 50',
+        purpose: 'beach',
+        description: 'Pack quick-dry microfiber towels, waterproof bag, and UV protection lotion.',
+        status: 'packed',
+        completed: true,
+        category: 'Clothing',
+        priority: 'High',
+        assignee: 'Abishek',
+        quantity: 2,
+        dueDate: '2026-08-11',
+        addedBy: 'Abishek',
+        addedAt: 'Yesterday'
+    },
+    {
+        id: 108,
+        listId: 4,
+        title: 'First Aid Kit & Emergency Meds',
+        purpose: 'Camping Checklist',
+        description: 'Includes band-aids, antiseptic wipes, motion sickness pills, and pain relievers.',
+        status: 'to-pack',
+        completed: false,
+        category: 'Medicine',
+        priority: 'High',
+        assignee: 'Isala',
+        quantity: 1,
+        dueDate: '2026-08-15',
+        addedBy: 'Isala',
+        addedAt: '3 days ago'
+    },
+    {
+        id: 109,
+        listId: 2,
+        title: 'Thermal Base Layers & Rain Shell',
+        purpose: 'Japan Trip Packing',
+        description: 'Pack moisture-wicking tops and bottoms for cold mountain trips.',
+        status: 'to-pack',
+        completed: false,
+        category: 'Clothing',
+        priority: 'Medium',
+        assignee: 'Senithu',
+        quantity: 2,
+        dueDate: '2026-08-20',
+        addedBy: 'Senithu',
+        addedAt: 'Yesterday'
+    },
+    {
+        id: 110,
+        listId: 1,
+        title: 'Sunglasses & UV Hat',
+        purpose: 'beach',
+        description: 'Polarized sunglasses and broad brim sun hat.',
+        status: 'to-pack',
+        completed: false,
+        category: 'Accessories',
+        priority: 'Medium',
+        assignee: 'Senithu',
+        quantity: 1,
+        dueDate: '2026-08-12',
+        addedBy: 'Senithu',
+        addedAt: 'Yesterday'
+    },
+    {
+        id: 111,
+        listId: 3,
+        title: 'Organic Whole Milk',
+        purpose: 'Weekly Groceries',
+        description: '2 Gallons of organic whole milk.',
+        status: 'packed',
+        completed: true,
+        category: 'Food',
+        priority: 'High',
+        assignee: 'Udaya',
+        quantity: 2,
+        dueDate: '2026-08-09',
+        addedBy: 'Udaya',
+        addedAt: 'Yesterday'
+    },
+    {
+        id: 112,
+        listId: 4,
+        title: 'Sleeping Bags',
+        purpose: 'Camping Checklist',
+        description: '2 Sleeping bags rated for 0 degrees Celsius.',
+        status: 'to-pack',
+        completed: false,
+        category: 'Sports',
+        priority: 'High',
+        assignee: 'Abishek',
+        quantity: 2,
+        dueDate: '2026-08-17',
+        addedBy: 'Abishek',
+        addedAt: '2 days ago'
+    }
+];
