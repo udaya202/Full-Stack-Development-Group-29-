@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { usePackPal } from '../../context/PackPalContext';
+import { usePackPal } from '../context/PackPalContext';
 import Navbar from '../components/layout/Navbar';
 import Button from '../components/common/Button';
 

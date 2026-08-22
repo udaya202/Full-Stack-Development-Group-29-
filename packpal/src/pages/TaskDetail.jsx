@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { usePackPal } from '../../contex/PackPalContext';
-import Navbar from '../../components/Layout/Navbar';
-import Badge from '../../components/common/Badge';
-import Button from '../../components/common/Button';
-import Modal from '../../components/common/Modal';
+import { usePackPal } from '../context/PackPalContext';
+import Navbar from '../components/layout/Navbar';
+import Badge from '../components/common/Badge';
+import Button from '../components/common/Button';
+import Modal from '../components/common/Modal';
+
 export default function TaskDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
